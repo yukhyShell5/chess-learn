@@ -1,0 +1,7 @@
+.graphContainer {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  background-color: #fafafa;
+  border-left: 1px solid #e5e5e5;
+}
