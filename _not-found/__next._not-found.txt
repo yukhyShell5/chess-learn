@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[15918,["/chess-learn/_next/static/chunks/9d1e3745d559ac61.js"],"default"]
 3:I[35797,["/chess-learn/_next/static/chunks/9d1e3745d559ac61.js"],"default"]
-0:{"buildId":"lacXv2Tio5sOrKDmCw6Gk","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"CWj7yQlcD7KVARJvLlAFe","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
