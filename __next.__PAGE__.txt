@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
-2:I[33026,["/_next/static/chunks/9d1e3745d559ac61.js"],"ClientPageRoot"]
-3:I[52683,["/_next/static/chunks/809e5c18073849dc.js"],"default"]
-6:I[83058,["/_next/static/chunks/9d1e3745d559ac61.js"],"OutletBoundary"]
+2:I[33026,["/chess-learn/_next/static/chunks/9d1e3745d559ac61.js"],"ClientPageRoot"]
+3:I[52683,["/chess-learn/_next/static/chunks/809e5c18073849dc.js"],"default"]
+6:I[83058,["/chess-learn/_next/static/chunks/9d1e3745d559ac61.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-:HL["/_next/static/chunks/470b5631c94454b9.css","style"]
-0:{"buildId":"P3cy16rF4dzSQNvxShylK","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/470b5631c94454b9.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/809e5c18073849dc.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+:HL["/chess-learn/_next/static/chunks/470b5631c94454b9.css","style"]
+0:{"buildId":"lacXv2Tio5sOrKDmCw6Gk","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/chess-learn/_next/static/chunks/470b5631c94454b9.css","precedence":"next"}],["$","script","script-0",{"src":"/chess-learn/_next/static/chunks/809e5c18073849dc.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
