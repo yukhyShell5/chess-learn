@@ -1,6 +1,6 @@
 :HL["/chess-learn/_next/static/chunks/05fd2ece389a0912.css","style"]
 :HL["/chess-learn/_next/static/media/797e433ab948586e-s.p.29207c2f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/chess-learn/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/chess-learn/_next/static/chunks/715b90e4f127a8ad.css","style"]
+:HL["/chess-learn/_next/static/chunks/b0a6d0cd89f2a000.css","style"]
 :HL["https://yukhyshell5.github.io/theme.css","style"]
-0:{"buildId":"vLbArT8rjtUjFXOfhqv-6","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"--n0hJSLP3VRyFWGE5rUi","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
