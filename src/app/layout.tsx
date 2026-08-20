@@ -28,6 +28,16 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://yukhyshell5.github.io/theme.css" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="ys-topbar">
+          <a href="https://yukhyshell5.github.io/" className="ys-topbar-brand">
+            ❯ yukhyShell5
+          </a>
+          <span className="ys-topbar-sep">/</span>
+          <span className="ys-topbar-tool">chess-learn</span>
+          <a href="https://yukhyshell5.github.io/" className="ys-topbar-home">
+            portfolio ↗
+          </a>
+        </div>
         {children}
       </body>
     </html>

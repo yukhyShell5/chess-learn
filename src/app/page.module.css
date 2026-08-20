@@ -2,7 +2,9 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  padding-top: 2.25rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .leftPanel {
