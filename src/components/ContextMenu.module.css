@@ -1,9 +1,9 @@
 .menu {
   position: fixed;
-  background: white;
-  border: 1px solid #e5e5e5;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   padding: 0.25rem;
   min-width: 180px;
   z-index: 1000;
@@ -21,12 +21,12 @@
   cursor: pointer;
   border-radius: 4px;
   font-size: 0.875rem;
-  color: #374151;
+  color: var(--muted);
   transition: background 0.15s;
 }
 
 .menuItem:hover:not(:disabled) {
-  background: #f3f4f6;
+  background: var(--input);
 }
 
 .menuItem:disabled {

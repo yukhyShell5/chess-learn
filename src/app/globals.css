@@ -3,16 +3,36 @@
 @import 'chessground/assets/chessground.cburnett.css';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #17171a;
+  --foreground: #eae8ee;
+  --card: #1e1e22;
+  --border: #26262b;
+  --input: #35353d;
+  --muted: #cdccd2;
+  --dim: #908f96;
+  --primary: #cba6f7;
+  --critical: #f38ba8;
+  --success: #a6e3a1;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   margin: 0;
   padding: 0;
   height: 100vh;
   overflow: hidden;
+}
+
+/* React Flow — aligner les arêtes et l'attribution sur le thème */
+.react-flow__edge-path {
+  stroke: var(--input);
+}
+.react-flow__attribution {
+  background: transparent !important;
+  color: var(--dim);
+}
+.react-flow__attribution a {
+  color: var(--dim);
 }

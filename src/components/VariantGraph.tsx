@@ -81,9 +81,9 @@ function VariantGraphInner() {
         data: { label: isRoot ? 'Start' : node.move?.san },
         position: { x: 0, y: 0 },
         style: {
-          background: isActive ? '#4f46e5' : '#fff',
-          color: isActive ? '#fff' : '#000',
-          border: isActive ? '2px solid #312e81' : '1px solid #777',
+          background: isActive ? 'var(--primary)' : 'var(--card)',
+          color: isActive ? 'var(--primary-foreground, #17171a)' : 'var(--muted)',
+          border: isActive ? '2px solid var(--primary)' : '1px solid var(--border)',
           width: nodeWidth,
           fontSize: '12px',
           fontWeight: isRoot ? 'bold' : 'normal',
