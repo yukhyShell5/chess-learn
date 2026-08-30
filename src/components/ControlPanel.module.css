@@ -25,16 +25,16 @@
   padding: 0.5rem;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: var(--card);
-  color: var(--muted);
+  background: var(--input);
+  color: var(--foreground);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .button:hover:not(:disabled) {
-  background: var(--input);
-  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
-  color: var(--foreground);
+  background: color-mix(in srgb, var(--primary) 15%, var(--input));
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .button:disabled {
@@ -44,12 +44,13 @@
 
 .danger {
   color: var(--critical);
-  border-color: color-mix(in srgb, var(--critical) 40%, transparent);
+  border-color: var(--border);
 }
 
 .danger:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--critical) 10%, transparent);
+  background: color-mix(in srgb, var(--critical) 15%, var(--input));
   border-color: var(--critical);
+  color: var(--critical);
 }
 
 .button span {

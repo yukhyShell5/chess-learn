@@ -81,13 +81,14 @@ function VariantGraphInner() {
         data: { label: isRoot ? 'Start' : node.move?.san },
         position: { x: 0, y: 0 },
         style: {
-          background: isActive ? 'var(--primary)' : 'var(--card)',
-          color: isActive ? 'var(--primary-foreground, #17171a)' : 'var(--muted)',
+          background: isActive ? 'var(--primary)' : 'var(--input)',
+          color: isActive ? 'var(--background)' : 'var(--foreground)',
           border: isActive ? '2px solid var(--primary)' : '1px solid var(--border)',
           width: nodeWidth,
           fontSize: '12px',
           fontWeight: isRoot ? 'bold' : 'normal',
           cursor: 'pointer',
+          borderRadius: '6px',
         },
       });
 

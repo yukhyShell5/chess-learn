@@ -25,7 +25,7 @@ interface GameState {
   activeNodeId: string; // The currently selected node
   
   // Actions
-  makeMove: (source: string, target: string) => boolean;
+  makeMove: (source: string, target: string, promotion?: string) => boolean;
   navigateToNode: (nodeId: string) => void;
   navigateBack: () => void;
   navigateForward: () => void;
@@ -35,6 +35,13 @@ interface GameState {
   importPGN: (pgn: string) => void;
   analyzeGames: (pgns: string[]) => void;
   exportPGN: () => string;
+  playLine: (pv: string[]) => void;
+  reviewMode: boolean;
+  reviewStatus: 'idle' | 'none' | 'correct' | 'wrong' | 'finished';
+  toggleReviewMode: () => void;
+  startReview: (nodeId: string) => void;
+  reviewMove: (source: string, target: string, promotion?: string) => boolean;
+  playRandomComputerMove: () => void;
 }
 
 export const useGameStore = create<GameState>((set, get) => {
@@ -56,19 +63,89 @@ export const useGameStore = create<GameState>((set, get) => {
     nodes: initialNodes,
     rootId,
     activeNodeId: rootId,
+    reviewMode: false,
+    reviewStatus: 'idle',
+    toggleReviewMode: () => set((state) => ({ reviewMode: !state.reviewMode, reviewStatus: 'idle' })),
+    startReview: (nodeId) => set({ activeNodeId: nodeId, reviewStatus: 'none' }),
+    playRandomComputerMove: () => {
+      const { nodes, activeNodeId } = get();
+      const activeNode = nodes[activeNodeId];
+      if (activeNode.children.length > 0) {
+        const randomChildId = activeNode.children[Math.floor(Math.random() * activeNode.children.length)];
+        const nextNode = nodes[randomChildId];
+        if (nextNode.children.length === 0) {
+          set({ activeNodeId: randomChildId, reviewStatus: 'finished' });
+        } else {
+          set({ activeNodeId: randomChildId, reviewStatus: 'none' });
+        }
+      } else {
+        set({ reviewStatus: 'finished' });
+      }
+    },
+    reviewMove: (source, target, promotion = 'q') => {
+      const { nodes, activeNodeId } = get();
+      const activeNode = nodes[activeNodeId];
+      const tempGame = new Chess(activeNode.fen);
+      
+      try {
+        const moveResult = tempGame.move({ from: source, to: target, promotion });
+        if (!moveResult) return false;
 
-    // ... (makeMove, navigateToNode, etc. remain same, skipping for brevity in this tool call if possible, but I must provide context)
-    // Actually, I need to replace the whole file or large chunks to be safe.
-    // Let's just append the new action and update the interface.
-    
+        const existingChildId = activeNode.children.find(childId => {
+          return nodes[childId].move?.san === moveResult.san;
+        });
+
+        if (existingChildId) {
+          set({ activeNodeId: existingChildId, reviewStatus: 'correct' });
+          
+          setTimeout(() => {
+             const currentNodes = get().nodes;
+             const currentNode = currentNodes[get().activeNodeId];
+             if (currentNode.children.length > 0) {
+                const randomChildId = currentNode.children[Math.floor(Math.random() * currentNode.children.length)];
+                const nextNode = currentNodes[randomChildId];
+                if (nextNode.children.length === 0) {
+                  set({ activeNodeId: randomChildId, reviewStatus: 'finished' });
+                } else {
+                  set({ activeNodeId: randomChildId, reviewStatus: 'none' });
+                }
+             } else {
+                set({ reviewStatus: 'finished' });
+             }
+          }, 500);
+          return true;
+        } else {
+          set({ reviewStatus: 'wrong' });
+          return false;
+        }
+      } catch (e) { return false; }
+    },
+    playLine: (pv: string[]) => {
+      const store = get();
+      let currentId = store.activeNodeId;
+      for (const uciMove of pv) {
+        // UCI format is like e2e4 or e7e8q
+        const from = uciMove.substring(0, 2);
+        const to = uciMove.substring(2, 4);
+        const promotion = uciMove.length === 5 ? uciMove[4] : undefined;
+        
+        // Temporarily set active node so makeMove operates correctly
+        set({ activeNodeId: currentId });
+        const success = get().makeMove(from, to, promotion);
+        // makeMove sets activeNodeId to the newly created/found node
+        if (!success) break;
+        currentId = get().activeNodeId;
+      }
+    },
+
     // ... makeMove ...
-    makeMove: (source, target) => {
+    makeMove: (source, target, promotion = 'q') => {
       const { game, nodes, activeNodeId } = get();
       const activeNode = nodes[activeNodeId];
       const tempGame = new Chess(activeNode.fen);
       
       try {
-        const moveResult = tempGame.move({ from: source, to: target, promotion: 'q' });
+        const moveResult = tempGame.move({ from: source, to: target, promotion });
         if (!moveResult) return false;
 
         const newFen = tempGame.fen();

@@ -1,0 +1,37 @@
+.barContainer {
+  width: 24px;
+  height: 100%;
+  background-color: #35353d; /* dark grey for black */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border);
+}
+
+.fill {
+  width: 100%;
+  background-color: #eae8ee; /* light color for white */
+  transition: height 0.3s ease;
+  position: absolute;
+  bottom: 0;
+}
+
+.score {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 2;
+}
+.scoreWhite {
+  color: #35353d;
+  bottom: 4px;
+}
+.scoreBlack {
+  color: #eae8ee;
+  top: 4px;
+}

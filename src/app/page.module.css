@@ -15,6 +15,36 @@
   background-color: var(--card);
 }
 
+.boardArea {
+  display: flex;
+  flex-direction: column;
+  width: calc(80vmin + 40px); /* 80vmin for board + eval bar width + gap */
+  max-width: 100%;
+  gap: 1rem;
+}
+
+.engineLinesTop {
+  width: 100%;
+  overflow: hidden;
+  height: 90px; /* Fixed height so it doesn't jump around */
+}
+
+.boardWithEval {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.evalBarWrapper {
+  height: 80vmin;
+  display: flex;
+}
+
+.boardWrapper {
+  display: flex;
+  flex: 1;
+}
+
 .rightPanel {
   flex: 1;
   display: flex;
@@ -35,13 +65,15 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   border: 1px solid var(--border);
-  background: var(--card);
+  background: var(--input);
   color: var(--foreground);
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .button:hover {
-  background: var(--input);
+  background: color-mix(in srgb, var(--primary) 15%, var(--input));
+  border-color: var(--primary);
+  color: var(--primary);
 }

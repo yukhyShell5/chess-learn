@@ -21,12 +21,13 @@
   cursor: pointer;
   border-radius: 4px;
   font-size: 0.875rem;
-  color: var(--muted);
-  transition: background 0.15s;
+  color: var(--foreground);
+  transition: background 0.15s, color 0.15s;
 }
 
 .menuItem:hover:not(:disabled) {
-  background: var(--input);
+  background: color-mix(in srgb, var(--primary) 15%, var(--card));
+  color: var(--primary);
 }
 
 .menuItem:disabled {

@@ -1,13 +1,13 @@
 'use client';
 
 import { useGameStore } from '@/store/useGameStore';
-import { ChevronLeft, ChevronRight, RotateCcw, Trash2, Download, Upload, FileDown, FileUp, Search } from 'lucide-react';
+import { ChevronLeft, ChevronRight, RotateCcw, Trash2, Download, Upload, FileDown, FileUp, Search, Activity, BookOpen } from 'lucide-react';
 import styles from './ControlPanel.module.css';
 import { useRef, useState } from 'react';
 import { fetchLichessGames, fetchChessComGames } from '@/lib/api';
 
 export default function ControlPanel() {
-  const { navigateBack, navigateForward, resetBoard, clearStudy, importPGN, exportPGN, analyzeGames } = useGameStore();
+  const { navigateBack, navigateForward, resetBoard, clearStudy, importPGN, exportPGN, analyzeGames, engineEnabled, setEngineEnabled, reviewMode, toggleReviewMode } = useGameStore();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
@@ -140,6 +140,15 @@ export default function ControlPanel() {
         <button className={styles.button} onClick={handleAnalyze} disabled={isAnalyzing} title="Analyze Games">
           <Search size={20} />
           <span>{isAnalyzing ? 'Loading...' : 'Analyze'}</span>
+        </button>
+        <button 
+          className={styles.button} 
+          onClick={toggleReviewMode} 
+          title="Mode Révision"
+          style={reviewMode ? { background: 'var(--primary)', color: 'var(--background)' } : {}}
+        >
+          <BookOpen size={20} />
+          <span>Apprendre</span>
         </button>
       </div>
 

@@ -32,12 +32,11 @@ export default function ChessBoard() {
       },
       events: {
         move: (orig, dest) => {
-          const success = makeMove(orig, dest);
-          if (!success) {
-            // If move is invalid (shouldn't happen if dests are correct, but safe guard), revert
-            // Actually, if we use the store's makeMove, it updates the state, which triggers the useEffect below
-            // But if it fails, we might need to force redraw.
-            // However, since we update the FEN in the store, the useEffect [fen] will handle re-sync.
+          const { reviewMode, makeMove, reviewMove } = useGameStore.getState();
+          if (reviewMode) {
+            reviewMove(orig, dest);
+          } else {
+            makeMove(orig, dest);
           }
         },
       },

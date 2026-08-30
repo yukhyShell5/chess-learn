@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex: 1;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 0;
+  text-align: center;
+}
+
+.statusBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--input);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+  min-height: 80px;
+}
+
+.statusBox[data-status="correct"] {
+  border: 2px solid #a6e3a1; /* Catppuccin green */
+}
+
+.statusBox[data-status="wrong"] {
+  border: 2px solid #f38ba8; /* Catppuccin red */
+  animation: shake 0.4s;
+}
+
+.correct {
+  color: #a6e3a1;
+  font-weight: bold;
+}
+
+.wrong {
+  color: #f38ba8;
+  font-weight: bold;
+}
+
+.finished {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  background: var(--surface0);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--foreground);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--surface1);
+  border-color: var(--primary);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.choiceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.subtitle {
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.choiceButton {
+  padding: 0.75rem 1rem;
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--foreground);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.choiceButton:hover {
+  background: color-mix(in srgb, var(--primary) 15%, var(--input));
+  border-color: var(--primary);
+  color: var(--primary);
+}
