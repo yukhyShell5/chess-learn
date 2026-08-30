@@ -7,7 +7,7 @@ import { useRef, useState } from 'react';
 import { fetchLichessGames, fetchChessComGames } from '@/lib/api';
 
 export default function ControlPanel() {
-  const { navigateBack, navigateForward, resetBoard, clearStudy, importPGN, exportPGN, analyzeGames, engineEnabled, setEngineEnabled, reviewMode, toggleReviewMode } = useGameStore();
+  const { navigateBack, navigateForward, resetBoard, clearStudy, importPGN, exportPGN, analyzeGames, reviewMode, toggleReviewMode } = useGameStore();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
