@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[33026,["/chess-learn/_next/static/chunks/9d1e3745d559ac61.js"],"ClientPageRoot"]
-3:I[52683,["/chess-learn/_next/static/chunks/cccc45a3c31260ff.js"],"default"]
+3:I[52683,["/chess-learn/_next/static/chunks/23cd129b5439c389.js"],"default"]
 6:I[83058,["/chess-learn/_next/static/chunks/9d1e3745d559ac61.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-:HL["/chess-learn/_next/static/chunks/b0a6d0cd89f2a000.css","style"]
-0:{"buildId":"--n0hJSLP3VRyFWGE5rUi","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/chess-learn/_next/static/chunks/b0a6d0cd89f2a000.css","precedence":"next"}],["$","script","script-0",{"src":"/chess-learn/_next/static/chunks/cccc45a3c31260ff.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+:HL["/chess-learn/_next/static/chunks/5905eca610cfea4e.css","style"]
+0:{"buildId":"8EcqNLbdbAvt0SkmsyQ_X","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/chess-learn/_next/static/chunks/5905eca610cfea4e.css","precedence":"next"}],["$","script","script-0",{"src":"/chess-learn/_next/static/chunks/23cd129b5439c389.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
